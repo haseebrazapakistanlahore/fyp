@@ -92,7 +92,7 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator)->withInput(Input::all());
+            return Redirect::back()->withErrors($validator)->withInput(request()->all());
         }
         
          if($request->product_type == 0) {
@@ -107,7 +107,7 @@ class ProductController extends Controller
             $files = $request->file('colorImages');
             
             if($files == null || count($files)  != count($request->get('color'))) {
-                return  Redirect::back()->withInput(Input::all())->with('error', 'Please upload images with every color.');
+                return redirect()->back()->withInput(request()->all())->with('error', 'Please upload images with every color.');
             }
         }
 
@@ -259,7 +259,7 @@ class ProductController extends Controller
             $rules['price_professional'] = 'required|numeric|gt:0';
         }
 
-        if ($request->offer_available == 1) {
+        if ($C->offer_available == 1) {
             $rules['offer_price'] = 'required|numeric';
         }
 
@@ -273,7 +273,7 @@ class ProductController extends Controller
 
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
-            return Redirect::back()->withErrors($validator)->withInput(Input::all());
+            return Redirect::back()->withErrors($validator)->withInput(request()->all());
         }
         
         if($request->product_type == 0) {
@@ -288,7 +288,7 @@ class ProductController extends Controller
             $files = $request->file('colorImages');
             
             if($files == null || count($files)  != count($request->get('color'))) {
-                return  Redirect::back()->withInput(Input::all())->with('error', 'Please upload images with every color.');
+                return  Redirect::back()->withInput(request()->all())->with('error', 'Please upload images with every color.');
             }
         }
 
