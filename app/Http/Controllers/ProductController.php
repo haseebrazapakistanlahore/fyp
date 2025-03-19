@@ -259,7 +259,7 @@ class ProductController extends Controller
             $rules['price_professional'] = 'required|numeric|gt:0';
         }
 
-        if ($C->offer_available == 1) {
+        if ($request->offer_available == 1) {
             $rules['offer_price'] = 'required|numeric';
         }
 
