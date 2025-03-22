@@ -63,7 +63,7 @@
                                     </select>
                                 </div>
 
-                                <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                                <!-- <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                     <label>SubCategory </label>
                                     @if($subCategories == null)
                                     <select name="sub_category_id" disabled id="edit_sub_category_id" class="form-control">
@@ -99,7 +99,7 @@
                                     </select>
                                     @endif
                                    
-                                </div>
+                                </div> -->
 
                                 {{-- <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                     <label>Type <span class="required-star">*</span></label>

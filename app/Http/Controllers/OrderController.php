@@ -204,36 +204,36 @@ class OrderController extends Controller
         if ($request->input('tracking_id') != null && $request->input('tracking_id') != "") {
             $data["tracking_id"] = $request->input('tracking_id');
             
-            if ($order->tracking_id != $request->input('tracking_id')) {		
-                if (isset($user->token)) {		
-                    app('App\Http\Controllers\FCMController')->sendNotification('Order Updated Successfully.', $user->full_name.' your tracking id for order '.$order->invoice_id.' has been updated to '.$request->input('tracking_id'), [], $user->token);		
+            // if ($order->tracking_id != $request->input('tracking_id')) {		
+            //     if (isset($user->token)) {		
+            //         app('App\Http\Controllers\FCMController')->sendNotification('Order Updated Successfully.', $user->full_name.' your tracking id for order '.$order->invoice_id.' has been updated to '.$request->input('tracking_id'), [], $user->token);		
                     		
-                    $noti['content'] = $user->full_name.' your tracking id for order '.$order->invoice_id.' has been updated to '.$request->input('tracking_id');		
+            //         $noti['content'] = $user->full_name.' your tracking id for order '.$order->invoice_id.' has been updated to '.$request->input('tracking_id');		
         		
-                    Notification::create($noti);		
-                }		
-            }
+            //         Notification::create($noti);		
+            //     }		
+            // }
         }
         
-        if ($order->order_status != $request->input('order_status')) {		
-            if (isset($user->token)) {		
-                app('App\Http\Controllers\FCMController')->sendNotification('Order Updated Successfully.', $user->full_name.' your order '.$order->invoice_id.' has been updated to '.$request->input('order_status'), [], $user->token);		
+        // if ($order->order_status != $request->input('order_status')) {		
+        //     if (isset($user->token)) {		
+        //         app('App\Http\Controllers\FCMController')->sendNotification('Order Updated Successfully.', $user->full_name.' your order '.$order->invoice_id.' has been updated to '.$request->input('order_status'), [], $user->token);		
                 		
-                $noti['content'] = $user->full_name.' your order '.$order->invoice_id.' has been updated to '.$request->input('order_status');		
+        //         $noti['content'] = $user->full_name.' your order '.$order->invoice_id.' has been updated to '.$request->input('order_status');		
         		
-                Notification::create($noti);		
-            }		
-        }		
+        //         Notification::create($noti);		
+        //     }		
+        // }		
         		
-        if ($order->payment_status != $request->input('payment_status')) {		
-            if (isset($user->token)) {		
-                app('App\Http\Controllers\FCMController')->sendNotification('Order Updated Successfully.', $user->full_name.' your payment status for order '.$order->invoice_id.' has been updated to '.$request->input('payment_status'), [], $user->token);		
+        // if ($order->payment_status != $request->input('payment_status')) {		
+        //     if (isset($user->token)) {		
+        //         app('App\Http\Controllers\FCMController')->sendNotification('Order Updated Successfully.', $user->full_name.' your payment status for order '.$order->invoice_id.' has been updated to '.$request->input('payment_status'), [], $user->token);		
                 		
-                $noti['content'] = $user->full_name.' your payment status for order '.$order->invoice_id.' has been updated to '.$request->input('payment_status');		
+        //         $noti['content'] = $user->full_name.' your payment status for order '.$order->invoice_id.' has been updated to '.$request->input('payment_status');		
         		
-                Notification::create($noti);		
-            }		
-        }
+        //         Notification::create($noti);		
+        //     }		
+        // }
         
 
         Order::where('id', $request->order_id)->update($data);

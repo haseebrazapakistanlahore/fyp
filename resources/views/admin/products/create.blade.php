@@ -53,19 +53,19 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <!-- <div class="form-group col-md-6 col-sm-6 col-xs-12" style="display: none;">
                                 <label>Child Category </label>
                                 <select name="sub_category_id" id="sub_category_id" disabled class="form-control">
                                     <option value="" selected disabled>Select Sub Category</option>
                                 </select>
                             </div>
                             
-                            <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-group col-md-6 col-sm-6 col-xs-12"  style="display: none;">
                                 <label>Sub Child Category </label>
                                 <select name="sub_child_category_id" id="sub_child_category_id" disabled class="form-control">
                                     <option value="" selected disabled>Select Sub Child Category</option>
                                 </select>
-                            </div>
+                            </div> -->
 
 
                             <div class="form-group col-md-6 col-sm-6 col-xs-12">

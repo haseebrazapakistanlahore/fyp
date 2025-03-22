@@ -178,7 +178,7 @@ $("#product_type").on('change', function () {
         $('input#price_consumer').parent().remove();
     }
     var html = getPriceHtml($(this).val());
-    $("select#sub_child_category_id").parent().after(html);
+    $("select#category_id").parent().after(html);
     
     $('#sub_category_id').prop('disabled', true);
     $('#sub_category_id').empty();

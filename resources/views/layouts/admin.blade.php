@@ -11,7 +11,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>RIONA Admin Panel</title>
+    <title>LENSIFY Admin Panel</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('public/admin/modules/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -68,7 +68,7 @@
                 @if (file_exists(public_path('images/logo-black.png')))
                 <img id="Riona-logo-black" src="{{ asset('images/logo-black.png') }}" style="padding-left: 5px;height: 50px;width:auto" alt="PostQuam">
                 @else
-                <h2 class="pl-10">Riona</h2>
+                <h2 class="pl-10">LENSIFY</h2>
                 @endif
 
                 <img src="" alt="">
