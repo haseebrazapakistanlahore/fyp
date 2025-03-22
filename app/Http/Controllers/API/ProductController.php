@@ -39,11 +39,12 @@ class ProductController extends Controller
         ->where('product_type', '0')
         ->where('is_deleted', 0)
         ->orderBy(DB::raw('RAND()'))
-        ->get()
-        ->map(function ($product) {
-            $product->thumbnail = asset('storage/app/public/' . $product->thumbnail);
-            return $product;
-        });
+        ->get();
+
+        // ->map(function ($product) {
+        //     $product->thumbnail = asset('storage/app/public/' . $product->thumbnail);
+        //     return $product;
+        // });
 
 
 
@@ -76,11 +77,11 @@ class ProductController extends Controller
         ->orderBy(DB::raw('RAND()'))
         // ->skip($offset)
         // ->take($this->recordsPerPage)
-        ->get()
-        ->map(function ($product) {
-            $product->thumbnail = asset('storage/app/public/' . $product->thumbnail);
-            return $product;
-        });
+        ->get();
+        // ->map(function ($product) {
+        //     $product->thumbnail = asset('storage/app/public/' . $product->thumbnail);
+        //     return $product;
+        // });
 
         // $totalRecords = Product::where('available_quantity', '>', 0)
         // ->where('product_type', '1')
@@ -129,10 +130,11 @@ class ProductController extends Controller
             ->where('available_quantity', '>', 0)
             ->where('is_deleted', 0)    
             ->orderBy('id', 'desc')
-            ->get()->map(function ($product) {
-                $product->thumbnail = asset('storage/app/public/' . $product->thumbnail);
-                return $product;
-            });
+            ->get();
+            // ->map(function ($product) {
+            //     $product->thumbnail = asset('storage/app/public/' . $product->thumbnail);
+            //     return $product;
+            // });
             
         } else {
 
@@ -143,10 +145,11 @@ class ProductController extends Controller
             ->where('available_quantity', '>', 0)
             ->where('is_deleted', 0)    
             ->orderBy('id', 'desc')
-            ->get()->map(function ($product) {
-                $product->thumbnail = asset('storage/app/public/' . $product->thumbnail);
-                return $product;
-            });
+            ->get();
+            // ->map(function ($product) {
+            //     $product->thumbnail = asset('storage/app/public/' . $product->thumbnail);
+            //     return $product;
+            // });
 
         }
         
@@ -263,12 +266,12 @@ class ProductController extends Controller
         ->where('is_deleted', 0)
         ->first();
         if ($product) {
-            $product->thumbnail = asset('storage/app/public/' . $product->thumbnail);
+            $product->thumbnail = $product->thumbnail;
         
-            $product->productimages->transform(function ($image) {
-                $image->image_url = asset('storage/app/public/' . $image->image_url);
-                return $image;
-            });
+            // $product->productimages->transform(function ($image) {
+            //     $image->image_url = asset('storage/app/public/' . $image->image_url);
+            //     return $image;
+            // });
             
         }
         if ($product == null) {
